@@ -362,8 +362,8 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 .about .about-content .personal-info {
-    flex: 0 0 70%;
-    max-width: 70%;
+    flex: 0 0 65%;
+    max-width: 65%;
     margin-top: 40px;
 }
 .about .about-content .personal-info .info-item {
@@ -391,8 +391,8 @@ h3.my-profession {
     transform: translateY(-38px);
 }
 .about .about-content .skills {
-    flex: 0 0 30%;
-    max-width: 30%;
+    flex: 0 0 35%;
+    max-width: 35%;
     margin-top: 40px;
 }
 .about .about-content .skills .title-position {
@@ -411,7 +411,8 @@ h3.my-profession {
 .about .about-content .skills .skills-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    column-gap: 5px;
     align-items: flex-start;
     width: 100%;
     margin-left: 7vh;
