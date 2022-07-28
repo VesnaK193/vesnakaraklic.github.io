@@ -6,6 +6,7 @@
     --bg-black-50: #e8dfec;
     --text-black-900: #302e4d;
     --text-black-700: #504e70;
+    --border-white-700: #fdf9ff;
 }
 body.dark {
     --bg-black-900: #151515;
@@ -13,6 +14,7 @@ body.dark {
     --bg-black-50: #393939;
     --text-black-900: #ffffff;
     --text-black-700: #e9e9e9;
+    --border-white-700: #3a373c;
 }
 body {
     line-height: 1.5;
@@ -51,6 +53,16 @@ ul {
     overflow-x: hidden;
     transition: all 0.3s ease;
 }
+  .section::-webkit-scrollbar {
+    width: 0.625rem;
+  }
+  .section::-webkit-scrollbar-thumb {
+    background: var(--skin-color);
+    border-radius: 2.5rem;
+  }
+  .section::-webkit-scrollbar-track {
+    background: var(--bg-black-50);
+  }
 .section.back-section {
     z-index: 1;
 }
@@ -134,6 +146,7 @@ ul {
     border: none;
     background: var(--skin-color);
     transition: all 0.3s ease;
+    /* border: 2px solid var(--skin-color); */
 }
 .btn:hover {
     transform: scale(1.05);
@@ -321,6 +334,11 @@ h3.my-profession {
     margin: auto;border-radius: 5px;
     height: 400px;
 }
+
+/* .about.section::-webkit-scrollbar {
+    width: 10px;
+    color: red;
+} */
 .about .about-content {
     flex: 0 0 100%;
     max-width: 100%;
@@ -344,8 +362,8 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 .about .about-content .personal-info {
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 70%;
+    max-width: 70%;
     margin-top: 40px;
 }
 .about .about-content .personal-info .info-item {
@@ -373,14 +391,60 @@ h3.my-profession {
     transform: translateY(-38px);
 }
 .about .about-content .skills {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 30%;
+    max-width: 30%;
     margin-top: 40px;
+}
+.about .about-content .skills .title-position {
+    width: 100%;
+    margin-left: 7vh;
+    border-bottom: 1px solid var(--bg-black-50);
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--text-black-900);
+}
+.about .about-content .skills .title-position.marg-top {
+    margin-top: 10vh;
+}
+
+.about .about-content .skills .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin-left: 7vh;
+    padding-top: 1vh;
+}
+.about .about-content .skills .skills-container .skill-item-border {
+    border: 1px solid var(--skin-color);
+    text-align: center;
+    border-radius: 2vh;
+    background-color: var(--skin-color);
+    color: var(--bg-black-100);
+    font-size: 18px;
+    margin-bottom: 1vh;
+    padding-right: 3vh;
+    padding-left: 2vh;
 }
 .about .about-content .skills .skill-item {
     flex: 0 0 100%;
     max-width: 100%;
     margin-bottom: 22px;
+}
+.about .about-content .skills .languages-container {
+    display: flex;
+    flex-direction: column;
+}
+.about .about-content .skills .languages-container .language-item {
+    padding-left: 7vh;
+    margin-bottom: 1vh;
+}.about .about-content .skills .languages-container .language-item p {
+    color: var(--text-black-900);
+}
+.about .about-content .skills .languages-container .language-item span {
+    color: var(--text-black-700);
 }
 .about .about-content .skills .skill-item h5 {
     line-height: 40px;
@@ -413,10 +477,7 @@ h3.my-profession {
     line-height: 40px;
 }
 .about .about-content .education {
-    /* flex: 0 0 50%;
-    max-width: 50%;
-    margin-top: 30px; */
-    width: 100%;
+    width: 85%;
     margin-top: 26px;
 }
 .about .about-content h3.title {
@@ -504,16 +565,32 @@ h3.my-profession {
     margin-bottom: 30px;
 }
 .portfolio .portfolio-item-inner {
-    border: 6px solid var(--bg-black-100);
+    border: 6px solid var(--border-white-700);
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
 }
 .portfolio .portfolio-item-inner .portfolio-img {
+    position: relative;
     height: 200px;
 }
-.portfolio .portfolio-item-inner .portfolio-img img {
+.portfolio .portfolio-item-inner .project-description {
+    font-size: 15px;
+    color: var(--text-black-700);
+    padding: 5px;
+}
+.portfolio .portfolio-item-inner .project-description .title {
+    font-weight: bold;
+    border-right: 3px solid var(--skin-color);
+    border-left: 3px solid var(--skin-color);
+    padding-right: 6px;
+    padding-left: 6px;
+    margin-right: 6px;
+    font-size: 17px;
+}
+.portfolio .portfolio-item-inner .portfolio-img img, .portfolio .portfolio-item-inner .portfolio-img div {
     width: 100%;
+    height: 100%;
     display: block;
 }
 /* contact */
@@ -621,10 +698,7 @@ h3.my-profession {
 }
 @media (max-width:991px) {
     .contact, .contact-info-item,
-    .portfolio .portfolio-item {
-        flex: 0 0 50%;
-        max-width: 50%;
-    }
+    .portfolio .portfolio-item, 
     .about .about-content .education,
     .home .home-info {
         float: 0 0 100%;
@@ -645,3 +719,39 @@ h3.my-profession {
         max-width: 100%;
     }
 }
+.portfolio-img > img {
+    height: 21vh;
+    display: block;
+    width: 100%;
+    aspect-ratio: 1/1;
+    /* object-fit: cover; */
+    object-position: center;
+    object-fit: fill;
+}
+
+.portfolio-img > .show-text {
+    position: absolute;
+    inset: 0;
+    font-size: 20px;
+    padding: 6vh;
+    background-color: rgba(255, 255, 255, .4);
+    text-align: center;
+}
+
+.portfolio-img > img, .portfolio-img > .show-text {
+    transition: 200ms ease-in-out;
+}
+
+.portfolio-img:hover > img.blur {
+filter: blur(5px);
+}
+
+.portfolio-img > .show-text.fade {
+    opacity: 0;
+}
+
+.portfolio-img:hover > .show-text.fade {
+    opacity: 1;
+}
+
+ 

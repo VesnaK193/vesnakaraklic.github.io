@@ -1,6 +1,6 @@
 /* ======================== typing animation ======================== */
 var typed = new Typed(".typing", {
-    strings:["","Web Developer", "Frontend developer"," Developer"],
+    strings:["","Web Developer", "Frontend Developer"," Software Developer"],
     typeSpeed:100,
     BackSpeed:60,
     loop:true
@@ -19,7 +19,6 @@ for(let i = 0; i < totalNavList; i++) {
         for(let j = 0; j < totalNavList; j++) {
             if(navList[j].querySelector("a").classList.contains("active")) {
                 addBackSection(j);
-                // allSection[j].classList.add("back-section");
             }
             navList[j].querySelector("a").classList.remove("active")
         }
@@ -81,7 +80,7 @@ document.querySelector("#form-submit").addEventListener("submit", (event) => {
     var subject = document.getElementById("subject").value;
     var body = document.getElementById("message").value;
     const bodyText = body.replaceAll('\n', '%0d%0a');
-    var link = "mailto:vntm01101913@gmail.com?subject=" + subject+ "&body="+ bodyText;
+    var link = "mailto:vesna.karaklic.97@gmail.com?subject=" + subject+ "&body="+ bodyText;
 
 window.location.href = link;
 })
