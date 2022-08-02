@@ -177,7 +177,7 @@ ul {
     text-transform: capitalize;
 }
 .aside .logo .logo-icon {
-    max-width: 12vw;
+    max-width: 21vh;
 }
 .aside .logo::before {
     content: '';
@@ -382,6 +382,7 @@ h3.my-profession {
     color: var(--text-black-700);
     margin-left: 4px;
     display: inline-block;
+    word-break: break-all;
 }
 .about .about-content .personal-info .buttons {
     margin-top: 30px;
@@ -633,6 +634,7 @@ h3.my-profession {
     line-height: 25px;
     color: var(--text-black-700);
     font-weight: 400;
+    word-break: break-all;
 }
 .contact .contact-form {
     flex:  0 0 100%;
@@ -689,9 +691,6 @@ h3.my-profession {
     }
     .section {
         left: 0;
-    }
-    .section.open {
-        left: 270px;
     }
     .about .about-content .personal-info .info-item p span {
         display: block;
